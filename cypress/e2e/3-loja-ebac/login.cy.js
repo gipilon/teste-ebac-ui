@@ -9,7 +9,7 @@ describe('Funcionalidade: Login', () => {
     afterEach(() => {
         cy.screenshot()
     })
-    
+         
     it('Deve fazer login com sucesso', () => {
         cy.get('#username').type('giovanna.teste@teste.com')
         cy.get('#password').type('teste123')
