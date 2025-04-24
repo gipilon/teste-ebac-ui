@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+const perfil = require('../../fixtures/perfil.json');
+
 describe('Funcionalidade: Login', () => {
 
     beforeEach (() => {
@@ -25,11 +27,22 @@ describe('Funcionalidade: Login', () => {
         
     });
 
-    it('Deve exibir uma mensagem de erro ao inserir senha inválida', () => {
-        cy.get('#username').type('giovanna.teste@teste.com')
-        cy.get('#password').type('teste23')
+    it('Deve fazer login com sucesso - Usando massa de dados', () => {
+        cy.get('#username').type(perfil.usuario)
+        cy.get('#password').type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-error').should('exist')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+        
+    });
+
+    it.only('Deve fazer login com sucesso - Usando Fixture', () => {
+        cy.fixture('perfil').then( dados => {
+            cy.get('#username').type(dados.usuario, {log: false})
+            cy.get('#password').type(dados.senha, {log: false})
+            cy.get('.woocommerce-form > .button').click()
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+
+        })
         
     });
 
