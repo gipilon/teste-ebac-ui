@@ -10,17 +10,23 @@ class produtosPage{
     }   
 
     buscarProdutoLista(nomeProduto) {
-        cy.get('.product > .row')
+        cy.get('.post-2559 > .product-block')
             .contains(nomeProduto)
             .click()   
     }
 
-    visitarProduto() {
+    visitarProduto(nomeProduto) {
+        //cy.visit(`produtos/${nomeProduto}`)
 
+        const urlFormatada = nomeProduto.replace(/ /g,'-')
+        cy.visit(`produtos/${urlFormatada}`)
     }
     
-    adicionarProdutoCarrinho() {
-
+    adicionarProdutoCarrinho(tamanho, cor, quantidade) {
+        cy.get(`.button-variable-item-${tamanho}`).click()
+        cy.get(`.button-variable-item-${cor}`).click()
+        cy.get('.input-text').clear().type(quantidade)
+        cy.get('.single_add_to_cart_button').click()        
     }
 }
 

@@ -1,0 +1,38 @@
+[
+    {
+        "nomeProduto": "Abominable Hoodie",
+        "tamanho": "XS",
+        "cor": "Blue",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Hollister Backyard Sweatshirt",
+        "tamanho": "XS",
+        "cor": "Red",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Hollister Backyard Sweatshirt",
+        "tamanho": "S",
+        "cor": "Red",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Hollister Backyard Sweatshirt",
+        "tamanho": "M",
+        "cor": "Green",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Hollister Backyard Sweatshirt",
+        "tamanho": "L",
+        "cor": "White",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Hollister Backyard Sweatshirt",
+        "tamanho": "M",
+        "cor": "Red",
+        "quantidade": 3
+    }
+]
